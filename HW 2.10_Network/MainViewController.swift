@@ -7,9 +7,17 @@
 
 import UIKit
 
+enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
+    case downloadImage = "Download Image"
+    case getInfoAboutLOcation = "Get Info About Location"
+}
+    
+    
 private let reuseIdentifier = "Cell"
 
 class MainViewController: UICollectionViewController {
+    
+    let userActions = UserAction.allCases // massive
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +48,7 @@ class MainViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       1
+        userActions.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
