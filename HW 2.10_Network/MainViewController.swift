@@ -21,11 +21,12 @@ class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+   
+        collectionView.backgroundColor = .green
+
         
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
         
     }
     
@@ -55,6 +56,7 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Сell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
+        cell.backgroundColor = .yellow
         
         cell.userLabel.text = userActions[indexPath.item].rawValue
         
