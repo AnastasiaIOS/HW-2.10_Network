@@ -13,7 +13,7 @@ enum UserAction: String, CaseIterable { // подписываем под про�
 }
 
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "сell"
 
 class MainViewController: UICollectionViewController {
     
@@ -55,7 +55,7 @@ class MainViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Сell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "сell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
         cell.backgroundColor = .yellow
         
         cell.userLabel.text = userActions[indexPath.item].rawValue
