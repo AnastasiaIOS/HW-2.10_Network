@@ -22,7 +22,7 @@ class MainViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        collectionView.backgroundColor = .green
+      //  collectionView.backgroundColor = .green
 
         
         // Register cell classes
