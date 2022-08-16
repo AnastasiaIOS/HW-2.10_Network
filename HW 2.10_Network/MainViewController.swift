@@ -2,12 +2,10 @@
 //  MainViewController.swift
 //  HW 2.10_Network
 //
-//  Created by Anastasia on 27.07.2022.
+//  Created by Anastasia on 16.08.2022.
 //
 
 import UIKit
-
-let link = ""
 
 private let reuseIdentifier = "Cell"
 
@@ -16,42 +14,40 @@ class MainViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+        
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+       
     }
 
-    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-
+        // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
-        1
+       1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
-     
-    
         
-    
-        return cell
-    }
-}
-    // подписываем класс под протокол, чтобы сделать ячейку динамической
-    extension MainViewController: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            CGSize(width: UIScreen.main.bounds.width - 48, height: 100)
-        }
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Сell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
+               
+               return cell
     }
 
     // MARK: UICollectionViewDelegate
@@ -85,4 +81,13 @@ class MainViewController: UICollectionViewController {
     }
     */
 
+}
 
+// подписываем класс под протокол, чтобы сделать ячейку динамической
+    extension MainViewController: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            CGSize(width: UIScreen.main.bounds.width - 48, height: 100)
+        }
+        
+    }
+        
