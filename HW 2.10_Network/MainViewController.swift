@@ -21,30 +21,18 @@ class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-      //  collectionView.backgroundColor = .green
-
-        
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
     }
     
-    /*
+    
      // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     
@@ -56,7 +44,7 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "сell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
-        cell.backgroundColor = .yellow
+        cell.backgroundColor = .gray
         
         cell.userLabel.text = userActions[indexPath.item].rawValue
         
@@ -67,7 +55,17 @@ class MainViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        //определяем конкретный кейс и далее по какой ячейке тапнули
+        
         let userAction = userActions[indexPath.item]
+        
+        switch userAction {
+            
+        case .downloadImage:
+            performSegue(withIdentifier: "showImage", sender: nil)
+        case .getInfoAboutLOcation:
+            print("hello")
+        }
     }
     
      
@@ -79,7 +77,7 @@ class MainViewController: UICollectionViewController {
 // подписываем класс под протокол, чтобы сделать ячейку динамической
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width - 48, height: 100)
+        CGSize(width: UIScreen.main.bounds.width - 150, height: 50)
     }
 }
 
