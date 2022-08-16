@@ -8,8 +8,8 @@
 import UIKit
 
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
-    case downloadImage = "Download Image"
-    case getInfoAboutLOcation = "Get Info About Location"
+    case downloadImage = "Download"
+    case getInfoAboutLOcation = "Get Info"
 }
 
 
@@ -76,8 +76,10 @@ class MainViewController: UICollectionViewController {
 
 // подписываем класс под протокол, чтобы сделать ячейку динамической
 extension MainViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width - 150, height: 50)
+        CGSize(width: UIScreen.main.bounds.width - 350, height: 500)
+        
     }
 }
 
