@@ -10,6 +10,7 @@ import UIKit
 class UserActionCell: UICollectionViewCell {
     
     
-    @IBOutlet var userLabel: UILabel!
+    @IBOutlet var personLabel: UILabel!
+    
     
 }

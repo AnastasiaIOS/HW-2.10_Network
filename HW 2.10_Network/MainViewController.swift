@@ -13,8 +13,6 @@ enum UserAction: String, CaseIterable { // подписываем под про�
 }
 
 
-private let reuseIdentifier = "сell"
-
 class MainViewController: UICollectionViewController {
     
     let userActions = UserAction.allCases // massive
@@ -44,16 +42,16 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "сell", for: indexPath) as! UserActionCell // создается объект ячейки и кастим до типа нашего класса
-        cell.backgroundColor = .gray
+     
         
-        cell.userLabel.text = userActions[indexPath.item].rawValue
+        cell.personLabel.text = userActions[indexPath.item].rawValue
         
         return cell
     }
     
     // MARK: UICollectionViewDelegate
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //определяем конкретный кейс и далее по какой ячейке тапнули
         
@@ -78,7 +76,7 @@ class MainViewController: UICollectionViewController {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width - 48, height: 100)
+        CGSize(width: UIScreen.main.bounds.width - 48, height: 100) // инициализируем
         
     }
 }

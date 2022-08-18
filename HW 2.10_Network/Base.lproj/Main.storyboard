@@ -30,18 +30,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBn-B0-T0U">
-                                            <rect key="frame" x="118" y="32" width="104" height="37"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-qK-lNB">
+                                            <rect key="frame" x="53" y="40" width="235" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.92575222253799438" green="0.95265763998031616" blue="0.81902289390563965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="lBn-B0-T0U" firstAttribute="top" secondItem="W8Y-EX-TMq" secondAttribute="top" constant="55" id="H2t-gJ-Vgs"/>
-                                        <constraint firstItem="lBn-B0-T0U" firstAttribute="leading" secondItem="W8Y-EX-TMq" secondAttribute="leading" constant="154" id="Ids-W2-jTY"/>
-                                        <constraint firstAttribute="bottom" secondItem="lBn-B0-T0U" secondAttribute="bottom" constant="55" id="s30-OS-gFl"/>
-                                        <constraint firstAttribute="trailing" secondItem="lBn-B0-T0U" secondAttribute="trailing" constant="154" id="wQx-a2-OeK"/>
+                                        <constraint firstItem="QdH-qK-lNB" firstAttribute="top" secondItem="W8Y-EX-TMq" secondAttribute="top" constant="40" id="AZ0-D6-Tf6"/>
+                                        <constraint firstItem="QdH-qK-lNB" firstAttribute="leading" secondItem="W8Y-EX-TMq" secondAttribute="leading" constant="53" id="BLi-dq-YP6"/>
+                                        <constraint firstAttribute="bottom" secondItem="QdH-qK-lNB" secondAttribute="bottom" constant="39" id="pOy-Ya-sj8"/>
+                                        <constraint firstAttribute="trailing" secondItem="QdH-qK-lNB" secondAttribute="trailing" constant="52" id="v6i-Rd-5ia"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,8 +52,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="userLabel" destination="lBn-B0-T0U" id="0i0-gf-ilr"/>
-                                    <segue destination="UGt-he-tXy" kind="presentation" id="VWw-lV-glb"/>
+                                    <outlet property="personLabel" destination="QdH-qK-lNB" id="Y4r-5R-r23"/>
+                                    <segue destination="UGt-he-tXy" kind="show" id="tef-cu-H3x"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -68,15 +68,18 @@
             </objects>
             <point key="canvasLocation" x="-572.46376811594212" y="14.673913043478262"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="fse-99-YRa">
             <objects>
-                <viewController id="UGt-he-tXy" sceneMemberID="viewController">
-                    <imageView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DWh-aa-RFY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                <viewController id="UGt-he-tXy" customClass="ImageViewController" customModule="HW_2_10_Network" customModuleProvider="target" sceneMemberID="viewController">
+                    <activityIndicatorView key="view" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="ME2-SN-sZL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    </activityIndicatorView>
                     <navigationItem key="navigationItem" id="EZ6-4L-VwS"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ME2-SN-sZL" id="igm-l9-0xu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geE-Nv-TBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
