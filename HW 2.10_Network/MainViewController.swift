@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Link: String {
+    case imageURL = "http://placekitten.com/200/300"
+    case adress = "https://api.zippopotam.us/us/90210"
+}
+
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
     case downloadImage = "Download"
     case getInfoAboutLOcation = "Get Info"
