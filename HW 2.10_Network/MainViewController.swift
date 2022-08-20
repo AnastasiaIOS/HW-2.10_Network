@@ -87,7 +87,12 @@ extension MainViewController {
         
         // создаем URL сессию
         URLSession.shared.dataTask(with: url) { data, _, error in
-            <#code#>
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error")
+                return
+            }
+
         }
     }
 }
+
