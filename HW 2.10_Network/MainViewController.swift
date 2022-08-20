@@ -13,8 +13,8 @@ enum Link: String {
 }
 
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
-    case downloadImage = "Download"
-    case getInfoAboutLOcation = "Get Info"
+    case downloadImage = "Download Image"
+    case getInfoAboutOwner = "Owner"
 }
 
 
@@ -67,16 +67,6 @@ class MainViewController: UICollectionViewController {
             print("hello")
         }
     }
-    
-     
-// MARK: - Networking
-   
-    extension MainViewController {
-        private func
-    }
-    
-     
-    
 }
 
 // подписываем класс под протокол, чтобы сделать ячейку динамической
@@ -88,3 +78,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - Networking
+extension MainViewController {
+    private func getInfoAboutOwner() {
+        guard let url = URL(string: Link.ownerURL.rawValue) else {return}
+    }
+}
