@@ -9,7 +9,7 @@ import UIKit
 
 enum Link: String {
     case imageURL = "http://placekitten.com/200/300"
-    case addressURL = "https://api.zippopotam.us/us/90210"
+    case ownerURL = "https://api.agify.io/?name=bella"
 }
 
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
@@ -26,10 +26,7 @@ class MainViewController: UICollectionViewController {
         super.viewDidLoad()
         
     }
-    
-    
-     // MARK: - Navigation
-     
+
     
     
     // MARK: UICollectionViewDataSource
@@ -72,7 +69,12 @@ class MainViewController: UICollectionViewController {
     }
     
      
-     
+// MARK: - Networking
+   
+    extension MainViewController {
+        private func
+    }
+    
      
     
 }
