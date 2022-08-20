@@ -21,6 +21,8 @@ class ImageViewController: UIViewController {
     }
 
     private func fetchImage() {
+        guard let url = URL(string: Link.imageURL.rawValue) else {return}
+        // создаем сетевой запрос
         
     }
 }
