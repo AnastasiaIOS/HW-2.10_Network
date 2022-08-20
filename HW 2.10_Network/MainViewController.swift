@@ -81,6 +81,13 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - Networking
 extension MainViewController {
     private func getInfoAboutOwner() {
+        
+        // создаем URL - адрес
         guard let url = URL(string: Link.ownerURL.rawValue) else {return}
+        
+        // создаем URL сессию
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            <#code#>
+        }
     }
 }
