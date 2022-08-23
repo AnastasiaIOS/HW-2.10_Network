@@ -67,6 +67,12 @@ class MainViewController: UICollectionViewController {
             print("hello")
         }
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
+    }
 }
 
 // подписываем класс под протокол, чтобы сделать ячейку динамической
