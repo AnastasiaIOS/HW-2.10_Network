@@ -6,8 +6,8 @@
 //
 
 
-struct Owner {
-    let name: String
-    let age: Int
-    let count: Int
+struct Owner: Decodable {
+    let name: String?
+    let age: Int?
+    let count: Int?
 }

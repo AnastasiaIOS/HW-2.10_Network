@@ -92,7 +92,7 @@ extension MainViewController {
                 return
             }
 
-        }
+        } .resume() // !!!!НЕ ЗАБЫВАТЬ ПРО resume, иначе ничего не сработает
     }
 }
 
