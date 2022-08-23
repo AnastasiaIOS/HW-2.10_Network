@@ -82,5 +82,20 @@ class OwnerViewController: UICollectionViewController {
 extension OwnerViewController {
     func fetchOwner() {
         
+        guard let url = URL(string: Link.ownerURL.rawValue) else {return}
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            do {
+                let owner = try JSONDecoder().decode(Owner.self, from: data)
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

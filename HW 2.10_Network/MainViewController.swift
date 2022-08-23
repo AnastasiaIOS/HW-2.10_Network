@@ -73,6 +73,7 @@ class MainViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOwner" {
             guard let ownerVC = segue.destination as? OwnerViewController else {return}
+            ownerVC.fetchOwner()
         }
     }
 }
