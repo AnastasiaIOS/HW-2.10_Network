@@ -64,7 +64,7 @@
                     <navigationItem key="navigationItem" id="pVF-Eh-roD"/>
                     <connections>
                         <segue destination="UGt-he-tXy" kind="show" id="p8W-8T-iT1"/>
-                        <segue destination="jYt-lE-fkq" kind="show" id="YI8-zf-zmk"/>
+                        <segue destination="jYt-lE-fkq" kind="show" identifier="showOwner" id="YI8-zf-zmk"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndn-mY-jq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
