@@ -63,7 +63,7 @@ class MainViewController: UICollectionViewController {
             
         case .downloadImage:
             performSegue(withIdentifier: "showImage", sender: nil)
-        case .getInfoAboutLOcation:
+        case .getInfoAboutOwner:
             print("hello")
         }
     }
