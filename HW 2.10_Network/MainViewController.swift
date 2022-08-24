@@ -60,10 +60,10 @@ class MainViewController: UICollectionViewController {
         let userAction = userActions[indexPath.item]
         
         switch userAction {
-            
         case .downloadImage:
             performSegue(withIdentifier: "showImage", sender: nil)
         case .getInfoAboutOwner:
+            performSegue(withIdentifier: "showOwner", sender: nil)
             print("hello")
         }
     }
