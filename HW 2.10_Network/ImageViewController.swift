@@ -32,10 +32,14 @@ class ImageViewController: UIViewController {
             }
             
             guard let image = UIImage(data: data) else {return}
-            self.imageView.image = image
-            self.activityIndicator.stopAnimating()
-        }
-        
+            
+            // !!!!После того, как нам станут досупны данные надо перейти из фонового потока в основной!!!ассинхронное исполнение задач!
+            DispatchQueue.main.async {
+                self.imageView.image = image
+                self.activityIndicator.stopAnimating()
+            }
+            
+        }.resume() // !!!!! иначе ничего не заработает!!!!!
         
     }
 }
