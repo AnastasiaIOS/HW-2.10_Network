@@ -25,11 +25,15 @@ class ImageViewController: UIViewController {
         guard let url = URL(string: Link.imageURL.rawValue) else {return}
         // создаем сетевой запрос
         
-        URLSession.shared.dataTask(with: url) { data, _ , error in
+        URLSession.shared.dataTask(with: url) { [self] data, _ , error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "no error description")
                 return
             }
+            
+            guard let image = UIImage(data: data) else {return}
+            self.imageView.image = image
+            self.activityIndicator.stopAnimating()
         }
         
         
