@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" id="pVF-Eh-roD"/>
                     <connections>
                         <segue destination="jYt-lE-fkq" kind="show" identifier="showOwner" id="YI8-zf-zmk"/>
-                        <segue destination="FRL-Hq-kFa" kind="show" id="9hN-1z-BqA"/>
+                        <segue destination="FRL-Hq-kFa" kind="show" identifier="showImage" id="9hN-1z-BqA"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndn-mY-jq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,23 +135,39 @@
             </objects>
             <point key="canvasLocation" x="444" y="601"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="w1O-Kw-gTq">
             <objects>
-                <viewController id="FRL-Hq-kFa" sceneMemberID="viewController">
+                <viewController id="FRL-Hq-kFa" customClass="ImageViewController" customModule="HW_2_10_Network" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MRU-pL-0dk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9T-Nm-wUa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z9T-Nm-wUa">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QOx-ZM-vSc">
+                                <rect key="frame" x="197" y="491" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GNS-zN-EAD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="leading" secondItem="GNS-zN-EAD" secondAttribute="leading" id="6du-7t-nkn"/>
+                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" id="74s-Yy-ibp"/>
+                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="bottom" secondItem="GNS-zN-EAD" secondAttribute="bottom" id="Bre-3d-S9K"/>
+                            <constraint firstItem="GNS-zN-EAD" firstAttribute="trailing" secondItem="QOx-ZM-vSc" secondAttribute="trailing" constant="197" id="M8j-P1-Akf"/>
+                            <constraint firstItem="QOx-ZM-vSc" firstAttribute="leading" secondItem="GNS-zN-EAD" secondAttribute="leading" constant="197" id="i8n-s6-tNb"/>
+                            <constraint firstItem="QOx-ZM-vSc" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" constant="351" id="l5p-IB-eml"/>
+                            <constraint firstItem="GNS-zN-EAD" firstAttribute="bottom" secondItem="QOx-ZM-vSc" secondAttribute="bottom" constant="351" id="o8z-f8-PSN"/>
+                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="trailing" secondItem="GNS-zN-EAD" secondAttribute="trailing" id="u6Z-4I-I7V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LdN-rU-gOq"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="QOx-ZM-vSc" id="RI5-Tc-ihE"/>
+                        <outlet property="imageView" destination="Z9T-Nm-wUa" id="T7n-xj-Jy3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCJ-wE-m0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

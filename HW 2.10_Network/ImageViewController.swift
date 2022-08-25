@@ -9,9 +9,11 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    @IBOutlet var imageView: UIImageView!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class ImageViewController: UIViewController {
         guard let url = URL(string: Link.imageURL.rawValue) else {return}
         // создаем сетевой запрос
         
-        URLSession.shared.dataTask(with: url) { [self] data, _ , error in
+        URLSession.shared.dataTask(with: url) { data, _ , error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "no error description")
                 return

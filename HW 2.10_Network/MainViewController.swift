@@ -8,7 +8,7 @@
 import UIKit
 
 enum Link: String {
-    case imageURL = "http://placekitten.com/200/300"
+    case imageURL = "https://image-charts.com/chart?cht=p3&chs=700×100&chd=t:60,40&chl=Hello|World&chan&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1"
     case ownerURL = "https://api.agify.io/?name=bella"
 }
 
