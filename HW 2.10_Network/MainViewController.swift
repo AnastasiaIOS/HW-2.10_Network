@@ -8,13 +8,13 @@
 import UIKit
 
 enum Link: String {
-    case imageURL = "https://image-charts.com/chart?cht=p3&chs=700×100&chd=t:60,40&chl=Hello|World&chan&chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1"
+    case imageURL = "https://random.dog/be32463b-5476-41ab-bc44-37170957ee69.jpg"
     case ownerURL = "https://api.agify.io/?name=bella"
 }
 
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
-    case downloadImage = "Download Image"
-    case getInfoAboutOwner = "Owner"
+    case downloadImage = "Download Image of Dog"
+    case getInfoAboutOwner = "Owner of Dog"
 }
 
 
