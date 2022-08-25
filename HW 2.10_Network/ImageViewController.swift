@@ -9,8 +9,8 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    
     @IBOutlet var imageView: UIImageView!
+    
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
