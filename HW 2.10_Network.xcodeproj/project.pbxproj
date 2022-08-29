@@ -16,6 +16,7 @@
 		5D93A3C028908EDF000114D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D93A3BE28908EDF000114D6 /* LaunchScreen.storyboard */; };
 		5D93BC0628B0DAC900788C74 /* Owner(Model).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93BC0528B0DAC900788C74 /* Owner(Model).swift */; };
 		5D93BC0828B550E400788C74 /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93BC0728B550E400788C74 /* OwnerViewController.swift */; };
+		5D93BC0A28BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */; };
 		5DBE2AA628AC08F2007A3195 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE2AA528AC08F2007A3195 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5D93A3C128908EDF000114D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D93BC0528B0DAC900788C74 /* Owner(Model).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner(Model).swift"; sourceTree = "<group>"; };
 		5D93BC0728B550E400788C74 /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
+		5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutOwnerViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		5DBE2AA528AC08F2007A3195 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				5D93A3B528908EDE000114D6 /* SceneDelegate.swift */,
 				5D93A3B728908EDE000114D6 /* ImageViewController.swift */,
 				5D93A3B928908EDE000114D6 /* Main.storyboard */,
+				5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */,
 				5D93BC0728B550E400788C74 /* OwnerViewController.swift */,
 				5DBE2AA528AC08F2007A3195 /* MainViewController.swift */,
 				5D93BC0528B0DAC900788C74 /* Owner(Model).swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D93BC0A28BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift in Sources */,
 				5D35D6A928A961DC0070FBA4 /* UserActionCell.swift in Sources */,
 				5D93A3B828908EDE000114D6 /* ImageViewController.swift in Sources */,
 				5D93A3B428908EDE000114D6 /* AppDelegate.swift in Sources */,

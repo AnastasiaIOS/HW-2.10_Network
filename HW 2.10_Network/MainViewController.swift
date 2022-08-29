@@ -100,6 +100,14 @@ extension MainViewController {
                 print(error?.localizedDescription ?? "No error")
                 return
             }
+            
+            do {
+                let owner = try JSONDecoder().decode(Owner.self, from: data)
+                print(owner)
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
 
         } .resume() // !!!!НЕ ЗАБЫВАТЬ ПРО resume, иначе ничего не сработает
     }
