@@ -87,7 +87,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - Networking
+/*// MARK: - Networking
 extension MainViewController {
     private func getInfoAboutOwner() {
         
@@ -111,5 +111,5 @@ extension MainViewController {
 
         } .resume() // !!!!НЕ ЗАБЫВАТЬ ПРО resume, иначе ничего не сработает
     }
-}
+}*/
 
