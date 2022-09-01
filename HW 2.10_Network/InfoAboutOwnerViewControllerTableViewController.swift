@@ -19,11 +19,10 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 2
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         
         return 5
     }
@@ -32,14 +31,12 @@ class InfoAboutOwnerViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTV", for: indexPath)
         
-        
-        
         return cell
     }
 }
 
 extension InfoAboutOwnerViewController {
-    private func fetchOwner() {
+     func fetchOwner() {
         
         // создаем URL - адрес
         guard let url = URL(string: Link.ownerURL.rawValue) else {return}

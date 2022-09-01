@@ -25,21 +25,26 @@ class ImageViewController: UIViewController {
     private func fetchImage() {
         // создаем экземпляр класса URL
         guard let url = URL(string: Link.imageURL.rawValue) else {return}
-        // создаем сетевой запрос
         
+        // создаем сетевой запрос
         URLSession.shared.dataTask(with: url) { data, _ , error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "no error description")
                 return
             }
             
-            guard let image = UIImage(data: data) else {return}
+            do {
+                let image; try JSONDecoder().decode(ImageDog.self, from: data)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+             //let image = UIImage(data: data) else {return}
             
             // !!!!После того, как нам станут досупны данные надо перейти из фонового потока в основной!!!ассинхронное исполнение задач!
-            DispatchQueue.main.async {
-                self.imageView.image = image
-                self.activityIndicator.stopAnimating()
-            }
+            //DispatchQueue.main.async {
+            //    self.imageView.image = image
+               self.activityIndicator.stopAnimating()
+            //}
             
         }.resume() // !!!!! иначе ничего не заработает!!!!!
         
