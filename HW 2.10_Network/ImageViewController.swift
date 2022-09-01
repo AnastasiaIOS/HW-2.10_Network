@@ -33,18 +33,13 @@ class ImageViewController: UIViewController {
                 return
             }
             
-            do {
-                let image; try JSONDecoder().decode(ImageDog.self, from: data)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-             //let image = UIImage(data: data) else {return}
+            guard let image = UIImage(data: data) else {return}
             
             // !!!!После того, как нам станут досупны данные надо перейти из фонового потока в основной!!!ассинхронное исполнение задач!
-            //DispatchQueue.main.async {
-            //    self.imageView.image = image
+               DispatchQueue.main.async {
+               self.imageView.image = image
                self.activityIndicator.stopAnimating()
-            //}
+            }
             
         }.resume() // !!!!! иначе ничего не заработает!!!!!
         
