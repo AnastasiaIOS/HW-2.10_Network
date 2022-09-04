@@ -27,7 +27,7 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return owners.endIndex + 2
+    3
     }
     
     
@@ -36,8 +36,7 @@ class InfoAboutOwnerViewController: UITableViewController {
         
         var content = cell.defaultContentConfiguration()
         let owner = owners[indexPath.row]
-        content.text = owners[indexPath.row]
-        cell.contentConfiguration = content
+        //????????????
         
         return cell
     }
