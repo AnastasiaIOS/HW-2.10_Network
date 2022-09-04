@@ -9,11 +9,14 @@ import UIKit
 
 class InfoAboutOwnerViewController: UITableViewController {
     
+    private var owners: [Owner] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
+    
+
     
     // MARK: - Table view data source
     
@@ -24,15 +27,19 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return owners.endIndex + 2
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTV", for: indexPath)
         
+        
+        
         return cell
     }
+    
+   
 }
 
 extension InfoAboutOwnerViewController {

@@ -143,8 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z9T-Nm-wUa">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9T-Nm-wUa">
+                                <rect key="frame" x="0.0" y="106" width="414" height="756"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QOx-ZM-vSc">
                                 <rect key="frame" x="197" y="491" width="20" height="20"/>
@@ -155,6 +155,7 @@
                         <constraints>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="leading" secondItem="GNS-zN-EAD" secondAttribute="leading" id="6du-7t-nkn"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" id="74s-Yy-ibp"/>
+                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" id="9lv-Yu-7ca"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="bottom" secondItem="GNS-zN-EAD" secondAttribute="bottom" id="Bre-3d-S9K"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="trailing" secondItem="GNS-zN-EAD" secondAttribute="trailing" id="CMh-Wq-iSd"/>
                             <constraint firstItem="GNS-zN-EAD" firstAttribute="trailing" secondItem="QOx-ZM-vSc" secondAttribute="trailing" constant="197" id="M8j-P1-Akf"/>
