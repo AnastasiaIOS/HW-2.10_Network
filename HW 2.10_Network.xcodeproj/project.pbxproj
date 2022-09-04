@@ -64,19 +64,67 @@
 		5D93A3B228908EDE000114D6 /* HW 2.10_Network */ = {
 			isa = PBXGroup;
 			children = (
-				5D93A3B928908EDE000114D6 /* Main.storyboard */,
-				5DBE2AA528AC08F2007A3195 /* MainViewController.swift */,
-				5D93A3B728908EDE000114D6 /* ImageViewController.swift */,
-				5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */,
-				5D93BC0528B0DAC900788C74 /* Owner(Model).swift */,
-				5D93A3B328908EDE000114D6 /* AppDelegate.swift */,
-				5D93A3B528908EDE000114D6 /* SceneDelegate.swift */,
-				5D35D6A828A961DC0070FBA4 /* UserActionCell.swift */,
-				5D93A3BC28908EDF000114D6 /* Assets.xcassets */,
-				5D93A3BE28908EDF000114D6 /* LaunchScreen.storyboard */,
-				5D93A3C128908EDF000114D6 /* Info.plist */,
+				5D9ACE2C28C5393800D875EF /* Other */,
+				5D9ACE2B28C538EE00D875EF /* StoryBoard */,
+				5D9ACE2A28C538C300D875EF /* VC */,
+				5D9ACE2728C5385D00D875EF /* Model */,
+				5D9ACE2928C5389300D875EF /* Resources */,
+				5D9ACE2828C5387800D875EF /* App */,
 			);
 			path = "HW 2.10_Network";
+			sourceTree = "<group>";
+		};
+		5D9ACE2728C5385D00D875EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D93BC0528B0DAC900788C74 /* Owner(Model).swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D9ACE2828C5387800D875EF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5D93A3B528908EDE000114D6 /* SceneDelegate.swift */,
+				5D93A3C128908EDF000114D6 /* Info.plist */,
+				5D93A3B328908EDE000114D6 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5D9ACE2928C5389300D875EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D93A3BC28908EDF000114D6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D9ACE2A28C538C300D875EF /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				5D93A3B728908EDE000114D6 /* ImageViewController.swift */,
+				5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */,
+				5DBE2AA528AC08F2007A3195 /* MainViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		5D9ACE2B28C538EE00D875EF /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				5D93A3BE28908EDF000114D6 /* LaunchScreen.storyboard */,
+				5D93A3B928908EDE000114D6 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		5D9ACE2C28C5393800D875EF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				5D35D6A828A961DC0070FBA4 /* UserActionCell.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW 2.10_Network/Info.plist";
+				INFOPLIST_FILE = "HW 2.10_Network/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,7 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW 2.10_Network/Info.plist";
+				INFOPLIST_FILE = "HW 2.10_Network/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
