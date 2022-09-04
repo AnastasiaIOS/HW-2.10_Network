@@ -34,7 +34,10 @@ class InfoAboutOwnerViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTV", for: indexPath)
         
-        
+        var content = cell.defaultContentConfiguration()
+        let owner = owners[indexPath.row]
+        content.text = owners[indexPath.row]
+        cell.contentConfiguration = content
         
         return cell
     }
@@ -66,6 +69,8 @@ extension InfoAboutOwnerViewController {
         
     }
 }
+
+ 
 
 /*
  // Override to support conditional editing of the table view.
