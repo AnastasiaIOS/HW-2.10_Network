@@ -103,9 +103,9 @@
 		5D9ACE2A28C538C300D875EF /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE2AA528AC08F2007A3195 /* MainViewController.swift */,
 				5D93A3B728908EDE000114D6 /* ImageViewController.swift */,
 				5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */,
-				5DBE2AA528AC08F2007A3195 /* MainViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
