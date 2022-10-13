@@ -13,7 +13,7 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchOwner()
     }
     
 
@@ -61,6 +61,10 @@ extension InfoAboutOwnerViewController {
             
             do {
                 let owner = try JSONDecoder().decode(Owner.self, from: data)
+                DispatchQueue.main.async {
+                    self.owners.append(owner)
+                    self.tableView.reloadData()
+                }
                 
             } catch let error {
                 print(error.localizedDescription)
