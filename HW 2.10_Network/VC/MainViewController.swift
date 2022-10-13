@@ -29,7 +29,7 @@ class MainViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+         1
     }
     
     
