@@ -22,7 +22,7 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 1
+        1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +37,8 @@ class InfoAboutOwnerViewController: UITableViewController {
         
         var content = cell.defaultContentConfiguration()
         let owner = owners[indexPath.row]
-        //???????????? ВОТ ТУТ ДАЛЬШЕ НЕ ЗНАЮ КАК СДЕЛАТЬ ТАК, ЧТОБЫ В КАЖДУЮ СТРОКУ РАЗМЕСТИТЬ СВОЙСТВО МОДЕЛИ((
+        content.text = owner.name
+        cell.contentConfiguration = content
         
         return cell
     }

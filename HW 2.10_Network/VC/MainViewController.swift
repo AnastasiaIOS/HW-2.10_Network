@@ -22,9 +22,6 @@ class MainViewController: UICollectionViewController {
     
     let userActions = UserAction.allCases // massive
     
-
-
-    
     
     // MARK: UICollectionViewDataSource
     
