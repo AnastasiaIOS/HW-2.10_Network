@@ -22,10 +22,7 @@ class MainViewController: UICollectionViewController {
     
     let userActions = UserAction.allCases // massive
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+
 
     
     
