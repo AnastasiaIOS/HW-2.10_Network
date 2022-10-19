@@ -20,10 +20,6 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        1
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -38,6 +34,8 @@ class InfoAboutOwnerViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let owner = owners[indexPath.row]
         content.text = owner.name
+        content.secondaryText = "\(owner.age)" 
+        
         cell.contentConfiguration = content
         
         return cell

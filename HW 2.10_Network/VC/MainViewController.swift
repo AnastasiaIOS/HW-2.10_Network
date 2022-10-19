@@ -23,13 +23,6 @@ class MainViewController: UICollectionViewController {
     let userActions = UserAction.allCases // massive
     
     
-    // MARK: UICollectionViewDataSource
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-         1
-    }
-    
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         userActions.count
