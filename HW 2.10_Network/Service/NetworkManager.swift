@@ -22,8 +22,52 @@ class NetworkManager {
     func fetchData(from url: String?, with completion: @escaping(Owner) -> Void) {
         
         guard let stringURL = url else { return}
-        guard let url = URL(string: stringURL) else {return}
+        guard let url = URL(string: Link.ownerURL.rawValue) else {return}
         
-        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error")
+                return
+            }
+            do {
+                let owner = try JSONDecoder().decode(Owner.self, from: data) // декодируем полученные от                                                                    сервера данные в экз-р модели
+                DispatchQueue.main.async {   // выходим в основной поток
+                    completion(owner)        // в complition передаем экемпляр модели
+                }
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
+        } .resume()
     }
 }
+
+/*
+func fetchOwner() {
+   
+   // создаем URL - адрес
+   guard let url = URL(string: Link.ownerURL.rawValue) else {return}
+   
+   // создаем URL сессию
+   URLSession.shared.dataTask(with: url) { data, _, error in
+       guard let data = data else {
+           print(error?.localizedDescription ?? "No error")
+           return
+       }
+       
+       do {
+           let owner = try JSONDecoder().decode(Owner.self, from: data)
+           DispatchQueue.main.async {
+               self.owners.append(owner)
+               self.tableView.reloadData()
+           }
+           
+       } catch let error {
+           print(error.localizedDescription)
+       }
+       
+   } .resume() // !!!!НЕ ЗАБЫВАТЬ ПРО resume, иначе ничего не сработает
+   
+}
+*/
