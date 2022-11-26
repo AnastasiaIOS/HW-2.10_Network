@@ -41,20 +41,16 @@ class InfoAboutOwnerViewController: UITableViewController {
         
         return cell
     }
-    
-   
 }
 
 extension InfoAboutOwnerViewController {
+    
      func fetchOwner(from url:String?) {
         
         NetworkManager.shared.fetchOwner(from: url) { owner in
-            self.owners.append(owner)
-            self.tableView.reloadData()
-            
+            self.owners.append(owner)     // обновили текущую модель как свойство класса
+            self.tableView.reloadData()   // перезагружаем методжы протокола UITABLEVIEWDATASOURCE
         }
-        
-        
     }
 }
 
