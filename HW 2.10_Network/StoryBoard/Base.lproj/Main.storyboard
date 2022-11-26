@@ -163,7 +163,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="leading" secondItem="GNS-zN-EAD" secondAttribute="leading" id="6du-7t-nkn"/>
-                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" id="74s-Yy-ibp"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" id="9lv-Yu-7ca"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="bottom" secondItem="GNS-zN-EAD" secondAttribute="bottom" id="Bre-3d-S9K"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="trailing" secondItem="GNS-zN-EAD" secondAttribute="trailing" id="CMh-Wq-iSd"/>
@@ -171,7 +170,6 @@
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="leading" secondItem="GNS-zN-EAD" secondAttribute="leading" id="Wfd-uE-aUg"/>
                             <constraint firstItem="QOx-ZM-vSc" firstAttribute="leading" secondItem="GNS-zN-EAD" secondAttribute="leading" constant="197" id="i8n-s6-tNb"/>
                             <constraint firstItem="QOx-ZM-vSc" firstAttribute="top" secondItem="GNS-zN-EAD" secondAttribute="top" constant="351" id="l5p-IB-eml"/>
-                            <constraint firstItem="Z9T-Nm-wUa" firstAttribute="top" secondItem="MRU-pL-0dk" secondAttribute="top" id="ldk-Q6-69d"/>
                             <constraint firstItem="GNS-zN-EAD" firstAttribute="bottom" secondItem="QOx-ZM-vSc" secondAttribute="bottom" constant="351" id="o8z-f8-PSN"/>
                             <constraint firstAttribute="bottom" secondItem="Z9T-Nm-wUa" secondAttribute="bottom" constant="34" id="oQZ-3G-kSh"/>
                             <constraint firstItem="Z9T-Nm-wUa" firstAttribute="trailing" secondItem="GNS-zN-EAD" secondAttribute="trailing" id="u6Z-4I-I7V"/>

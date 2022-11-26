@@ -13,7 +13,7 @@ enum Link: String {
 }
 
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
-    case downloadImage = "Download Image of Dog"
+    case downloadImage = "Show Image"
     case getInfoAboutOwner = "Owner of Dog"
 }
 

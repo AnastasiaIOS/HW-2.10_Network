@@ -16,6 +16,7 @@
 		5D93A3C028908EDF000114D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D93A3BE28908EDF000114D6 /* LaunchScreen.storyboard */; };
 		5D93BC0628B0DAC900788C74 /* Owner(Model).swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93BC0528B0DAC900788C74 /* Owner(Model).swift */; };
 		5D93BC0A28BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */; };
+		5D95FCF82932641E00838133 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95FCF72932641E00838133 /* NetworkManager.swift */; };
 		5DBE2AA628AC08F2007A3195 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE2AA528AC08F2007A3195 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5D93A3C128908EDF000114D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D93BC0528B0DAC900788C74 /* Owner(Model).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner(Model).swift"; sourceTree = "<group>"; };
 		5D93BC0928BD692000788C74 /* InfoAboutOwnerViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutOwnerViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		5D95FCF72932641E00838133 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5DBE2AA528AC08F2007A3195 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 		5D93A3B228908EDE000114D6 /* HW 2.10_Network */ = {
 			isa = PBXGroup;
 			children = (
+				5D95FCF92932642800838133 /* Service */,
 				5D9ACE2C28C5393800D875EF /* Other */,
 				5D9ACE2B28C538EE00D875EF /* StoryBoard */,
 				5D9ACE2A28C538C300D875EF /* VC */,
@@ -72,6 +75,14 @@
 				5D9ACE2828C5387800D875EF /* App */,
 			);
 			path = "HW 2.10_Network";
+			sourceTree = "<group>";
+		};
+		5D95FCF92932642800838133 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5D95FCF72932641E00838133 /* NetworkManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5D9ACE2728C5385D00D875EF /* Model */ = {
@@ -202,6 +213,7 @@
 				5D35D6A928A961DC0070FBA4 /* UserActionCell.swift in Sources */,
 				5D93A3B828908EDE000114D6 /* ImageViewController.swift in Sources */,
 				5D93A3B428908EDE000114D6 /* AppDelegate.swift in Sources */,
+				5D95FCF82932641E00838133 /* NetworkManager.swift in Sources */,
 				5D93A3B628908EDE000114D6 /* SceneDelegate.swift in Sources */,
 				5D93BC0628B0DAC900788C74 /* Owner(Model).swift in Sources */,
 				5DBE2AA628AC08F2007A3195 /* MainViewController.swift in Sources */,
