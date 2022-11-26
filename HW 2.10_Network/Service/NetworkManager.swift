@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
+class NetworkManager {
+    
+    static let shared = NetworkManager()
+    
+    private init() {}
+    
+    func fetchData(from url: String?, with completion: @escaping(Owner) -> Void) {
+        
+    }
+}
