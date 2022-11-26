@@ -13,7 +13,7 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchOwner()
+       // fetchOwner(from:)
     }
     
 
@@ -22,6 +22,7 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         
         owners.count
         
@@ -45,30 +46,14 @@ class InfoAboutOwnerViewController: UITableViewController {
 }
 
 extension InfoAboutOwnerViewController {
-     func fetchOwner() {
+     func fetchOwner(from url:String?) {
         
-        // создаем URL - адрес
-        guard let url = URL(string: Link.ownerURL.rawValue) else {return}
+        NetworkManager.shared.fetchOwner(from: url) { owner in
+            self.owners.append(owner)
+            self.tableView.reloadData()
+            
+        }
         
-        // создаем URL сессию
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error")
-                return
-            }
-            
-            do {
-                let owner = try JSONDecoder().decode(Owner.self, from: data)
-                DispatchQueue.main.async {
-                    self.owners.append(owner)
-                    self.tableView.reloadData()
-                }
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        } .resume() // !!!!НЕ ЗАБЫВАТЬ ПРО resume, иначе ничего не сработает
         
     }
 }

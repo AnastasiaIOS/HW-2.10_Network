@@ -19,7 +19,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(from url: String?, with completion: @escaping(Owner) -> Void) {
+    func fetchOwner(from url: String?, with completion: @escaping(Owner) -> Void) {
         
         guard let stringURL = url else { return}
         guard let url = URL(string: Link.ownerURL.rawValue) else {return}
