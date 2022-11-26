@@ -21,5 +21,9 @@ class NetworkManager {
     
     func fetchData(from url: String?, with completion: @escaping(Owner) -> Void) {
         
+        guard let stringURL = url else { return}
+        guard let url = URL(string: stringURL) else {return}
+        
+        
     }
 }
