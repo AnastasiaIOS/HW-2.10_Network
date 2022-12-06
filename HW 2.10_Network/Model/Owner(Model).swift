@@ -8,7 +8,7 @@
 import UIKit
 
 struct ImageDog: Decodable {
-    let image: String?
+    let image: String
 }
 
 struct Owner: Decodable {
