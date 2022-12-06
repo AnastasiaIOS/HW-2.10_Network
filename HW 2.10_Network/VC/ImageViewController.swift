@@ -12,17 +12,31 @@ class ImageViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        fetchImage()
+        
+        DispatchQueue.global().async {
+           
+            guard let data = NetworkManager.shared.fetchImage(from: self.) else {return}
+    
+        DispatchQueue.main.async {
+            self.imageView.image = UIImage(data: data)
+            self.activityIndicator.stopAnimating()
+        }
+        }
+        
+        
+        /*DispatchQueue.global().async {
+            guard let imageData = NetworkManager.shared.fetchImage(from: self.character.image ) else {return}
+        }*/
+       // fetchImage()
     }
 
-    private func fetchImage() {
+  /*  private func fetchImage() {
         // создаем экземпляр класса URL
         guard let url = URL(string: Link.imageURL.rawValue) else {return}
         
@@ -43,6 +57,10 @@ class ImageViewController: UIViewController {
             
         }.resume() // !!!!! иначе ничего не заработает!!!!!
         
-    }
+    }*/
+    
+    
+    
+    
 }
 

@@ -21,7 +21,7 @@ class NetworkManager {
     
     func fetchOwner(from url: String?, with completion: @escaping(Owner) -> Void) {
         
-        guard let stringURL = url else { return}
+        guard let stringURL = url else { return }
         guard let url = URL(string: Link.ownerURL.rawValue) else {return}
         
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -40,6 +40,12 @@ class NetworkManager {
             }
             
         } .resume()
+    }
+    
+    func fetchImage(from url: String?) -> Data? {
+        guard let stringURL = url else { return nil }
+        guard let imageURL = URL(string: Link.imageURL.rawValue) else { return nil }
+        return try? Data(contentsOf: imageURL)
     }
 }
 

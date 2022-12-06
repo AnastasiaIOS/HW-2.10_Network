@@ -13,7 +13,7 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // fetchOwner(from:)
+       
     }
     
 
@@ -22,7 +22,6 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         
         owners.count
         
@@ -35,7 +34,7 @@ class InfoAboutOwnerViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let owner = owners[indexPath.row]
         content.text = owner.name
-        content.secondaryText = "\(owner.age)" 
+        content.secondaryText = "\(owner.age)"
         
         cell.contentConfiguration = content
         
