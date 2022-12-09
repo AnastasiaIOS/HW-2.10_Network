@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum Link: String {
+    
+    case imageURL = "https://random.dog/be32463b-5476-41ab-bc44-37170957ee69.jpg"
+    case ownerURL = "https://api.agify.io/?name=bella"
+}
+
+
 enum NetworkError: Error {
     case invalidURL
     case noData
@@ -22,7 +29,7 @@ class NetworkManager {
     func fetchOwner(from url: String?, with completion: @escaping(Owner) -> Void) {
         
         guard let stringURL = url else { return }
-        guard let url = URL(string: Link.ownerURL.rawValue) else {return}
+        guard let url = URL(string: stringURL) else {return}
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {

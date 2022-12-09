@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum Link: String {
-    case imageURL = "https://random.dog/be32463b-5476-41ab-bc44-37170957ee69.jpg"
-    case ownerURL = "https://api.agify.io/?name=bella"
-}
 
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
     case downloadImage = "Show Image"
