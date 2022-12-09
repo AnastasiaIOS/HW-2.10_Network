@@ -11,20 +11,11 @@ class InfoAboutOwnerViewController: UITableViewController {
     
     private var owners: [Owner] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
-    
-
-    
     // MARK: - Table view data source
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         owners.count
-        
     }
     
     
@@ -34,7 +25,7 @@ class InfoAboutOwnerViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let owner = owners[indexPath.row]
         content.text = owner.name
-        content.secondaryText = "\(owner.age)"
+        content.secondaryText = "Age \(owner.age ?? 0)"
         
         cell.contentConfiguration = content
         
@@ -44,13 +35,13 @@ class InfoAboutOwnerViewController: UITableViewController {
 
 extension InfoAboutOwnerViewController {
     
-     func fetchOwner(from url:String?) {
+    func fetchOwner(from url:String?) {
         
         NetworkManager.shared.fetchOwner(from: url) { owner in
             self.owners.append(owner)     // обновили текущую модель как свойство класса
-            self.tableView.reloadData()   // перезагружаем методжы протокола UITABLEVIEWDATASOURCE
+            self.tableView.reloadData()   // перезагружаем методы протокола UITABLEVIEWDATASOURCE
         }
     }
 }
 
- 
+
