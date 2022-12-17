@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class InfoAboutOwnerViewController: UITableViewController {
     
     private var owners: [Owner] = []
@@ -31,6 +32,9 @@ class InfoAboutOwnerViewController: UITableViewController {
         
         return cell
     }
+    
+    
+    
 }
 
 extension InfoAboutOwnerViewController {

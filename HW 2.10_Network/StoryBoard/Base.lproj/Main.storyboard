@@ -66,6 +66,8 @@
                     <connections>
                         <segue destination="jYt-lE-fkq" kind="show" identifier="showOwner" id="YI8-zf-zmk"/>
                         <segue destination="FRL-Hq-kFa" kind="show" identifier="showImage" id="9hN-1z-BqA"/>
+                        <segue destination="jYt-lE-fkq" kind="show" identifier="showPostAlamofire" id="co3-AX-WJz"/>
+                        <segue destination="jYt-lE-fkq" kind="show" identifier="showGetAlamofire" id="tDd-0n-zmU"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndn-mY-jq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,7 +144,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWA-k2-XWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="601"/>
+            <point key="canvasLocation" x="1110" y="494"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="w1O-Kw-gTq">
@@ -207,6 +209,9 @@
             <point key="canvasLocation" x="-1632" y="16"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="co3-AX-WJz"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Link: String {
     
@@ -48,6 +49,8 @@ class NetworkManager {
             
         } .resume()
     }
+    
+   
 }
 
 class ImageManager {
