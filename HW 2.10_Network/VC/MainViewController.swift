@@ -11,7 +11,7 @@ import UIKit
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
     case downloadImage = "Show Image"
     case getInfoAboutOwner = "Owner of Dog"
-    case getImageAlamofire = "Image (Alamofire)"
+   // case getImageAlamofire = "Image (Alamofire)"
     case getInfoAboutOwnerAlamofire = "Owner (Alamofire)"
 }
 
@@ -49,8 +49,8 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "showImage", sender: nil)
         case .getInfoAboutOwner:
             performSegue(withIdentifier: "showOwner", sender: nil)
-        case .getImageAlamofire:
-            performSegue(withIdentifier: "showImageAlamofire", sender: nil)
+    //    case .getImageAlamofire:
+     //       performSegue(withIdentifier: "showImageAlamofire", sender: nil)
         case .getInfoAboutOwnerAlamofire:
             performSegue(withIdentifier: "showOwnerAlamofire", sender: nil)
         }
@@ -59,12 +59,30 @@ class MainViewController: UICollectionViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showOwner" {
-            guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
-            ownerVC.fetchOwner(from: Link.ownerURL.rawValue)
+        if segue.identifier != "showImage" {
+            let ownerVC = segue.destination as! InfoAboutOwnerViewController
+            switch segue.identifier {
+            case .showOwner:
+      //          ownerVC.fetchOwner(from: Link.ownerURL.rawValue)
+            case .getInfoAboutOwnerAlamofire:
+     //           ownerVC.fetchOwner2()
+            }
+            
+            
         }
     }
 }
+
+/*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier != "showImage" {
+        let coursesVC = segue.destination as! CoursesViewController
+        switch segue.identifier {
+        case "showCourses": coursesVC.fetchCourses()
+        case "showCoursesV2": coursesVC.fetchCoursesV2()
+        case "alamofireGet": coursesVC.alamofireGetButtonPressed()
+        case "alamofirePost": coursesVC.alamofirePostButtonPressed()
+        default: break*/
+
 
 // подписываем класс под протокол, чтобы сделать ячейку динамической
 extension MainViewController: UICollectionViewDelegateFlowLayout {
