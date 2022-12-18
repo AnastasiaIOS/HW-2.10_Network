@@ -50,6 +50,8 @@ class MainViewController: UICollectionViewController {
         case .getInfoAboutOwner:
             performSegue(withIdentifier: "showOwner", sender: nil)
         case .getImageAlamofire:
+            performSegue(withIdentifier: "showImageAlamofire", sender: nil)
+        case .getInfoAboutOwnerAlamofire:
             performSegue(withIdentifier: "showOwnerAlamofire", sender: nil)
         }
     }
