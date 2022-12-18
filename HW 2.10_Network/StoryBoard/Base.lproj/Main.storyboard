@@ -66,8 +66,8 @@
                     <connections>
                         <segue destination="jYt-lE-fkq" kind="show" identifier="showOwner" id="YI8-zf-zmk"/>
                         <segue destination="FRL-Hq-kFa" kind="show" identifier="showImage" id="9hN-1z-BqA"/>
-                        <segue destination="jYt-lE-fkq" kind="show" identifier="showPostAlamofire" id="co3-AX-WJz"/>
-                        <segue destination="jYt-lE-fkq" kind="show" identifier="showGetAlamofire" id="tDd-0n-zmU"/>
+                        <segue destination="jYt-lE-fkq" kind="show" identifier="showOwnerAlamofire" id="co3-AX-WJz"/>
+                        <segue destination="jYt-lE-fkq" kind="show" identifier="showImageAlamofire" id="tDd-0n-zmU"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndn-mY-jq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
