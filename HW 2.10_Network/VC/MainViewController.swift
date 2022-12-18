@@ -11,6 +11,7 @@ import UIKit
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
     case downloadImage = "Show Image"
     case getInfoAboutOwner = "Owner of Dog"
+    case getAlamofire = "Get (withAlamofire)"
 }
 
 
@@ -47,7 +48,8 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "showImage", sender: nil)
         case .getInfoAboutOwner:
             performSegue(withIdentifier: "showOwner", sender: nil)
-            print("hello")
+        case .getAlamofire:
+            performSegue(withIdentifier: "showGetAlamofire", sender: nil)
         }
     }
     
