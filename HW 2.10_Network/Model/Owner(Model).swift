@@ -17,3 +17,11 @@ struct Owner: Decodable {
     let count: Int?
     
 }
+
+struct Owner2: Codable {
+    let name: String
+    let age: String
+    let count: String
+   
+}
+

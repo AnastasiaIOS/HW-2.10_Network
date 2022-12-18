@@ -12,6 +12,7 @@ enum Link: String {
     
     case imageURL = "https://random.dog/be32463b-5476-41ab-bc44-37170957ee69.jpg"
     case ownerURL = "https://api.agify.io/?name=bella"
+    case postRequest = "https://jsonplaceholder.typicode.com/posts"
 }
 
 
@@ -49,8 +50,6 @@ class NetworkManager {
             
         } .resume()
     }
-    
-   
 }
 
 class ImageManager {
@@ -67,31 +66,4 @@ class ImageManager {
     }
 }
 
-/*
-func fetchOwner() {
-   
-   // создаем URL - адрес
-   guard let url = URL(string: Link.ownerURL.rawValue) else {return}
-   
-   // создаем URL сессию
-   URLSession.shared.dataTask(with: url) { data, _, error in
-       guard let data = data else {
-           print(error?.localizedDescription ?? "No error")
-           return
-       }
-       
-       do {
-           let owner = try JSONDecoder().decode(Owner.self, from: data)
-           DispatchQueue.main.async {
-               self.owners.append(owner)
-               self.tableView.reloadData()
-           }
-           
-       } catch let error {
-           print(error.localizedDescription)
-       }
-       
-   } .resume() // !!!!НЕ ЗАБЫВАТЬ ПРО resume, иначе ничего не сработает
-   
-}
-*/
+
