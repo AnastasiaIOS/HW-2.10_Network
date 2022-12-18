@@ -28,7 +28,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchOwner(from url: String?, with completion: @escaping(Owner) -> Void) {
+ /*   func fetchOwner(from url: String?, with completion: @escaping(Owner) -> Void) {
         
         guard let stringURL = url else { return }
         guard let url = URL(string: stringURL) else {return}
@@ -49,7 +49,34 @@ class NetworkManager {
             }
             
         } .resume()
+    }*/
+    
+    func fetch<T: Decodable>(dataType: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.noData))
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+               
+                let type = try decoder.decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(type))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
     }
+    
+    
 }
 
 class ImageManager {
@@ -57,13 +84,6 @@ class ImageManager {
     static var shared = ImageManager()
     
     private init() {}
-    
-    
-  /*  func fetchImage(from url: String?) -> Data? {
-        guard let stringURL = url else { return nil }
-        guard let imageURL = URL(string: stringURL) else { return nil }
-        return try? Data(contentsOf: imageURL)
-    }*/
     
     func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else {
@@ -79,7 +99,6 @@ class ImageManager {
                 completion(.success(imageData))
             }
         }
-        
     }
     
     

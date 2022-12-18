@@ -49,8 +49,6 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "showImage", sender: nil)
         case .getInfoAboutOwner:
             performSegue(withIdentifier: "showOwner", sender: nil)
-    //    case .getImageAlamofire:
-     //       performSegue(withIdentifier: "showImageAlamofire", sender: nil)
         case .getInfoAboutOwnerAlamofire:
             performSegue(withIdentifier: "showOwnerAlamofire", sender: nil)
         }
@@ -74,15 +72,6 @@ class MainViewController: UICollectionViewController {
     }
 }
 
-/*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier != "showImage" {
-        let coursesVC = segue.destination as! CoursesViewController
-        switch segue.identifier {
-        case "showCourses": coursesVC.fetchCourses()
-        case "showCoursesV2": coursesVC.fetchCoursesV2()
-        case "alamofireGet": coursesVC.alamofireGetButtonPressed()
-        case "alamofirePost": coursesVC.alamofirePostButtonPressed()
-        default: break*/
 
 
 // подписываем класс под протокол, чтобы сделать ячейку динамической

@@ -32,9 +32,6 @@ class InfoAboutOwnerViewController: UITableViewController {
         
         return cell
     }
-    
-    
-    
 }
 
 extension InfoAboutOwnerViewController {
