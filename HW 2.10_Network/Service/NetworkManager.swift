@@ -59,11 +59,47 @@ class ImageManager {
     private init() {}
     
     
-    func fetchImage(from url: String?) -> Data? {
+  /*  func fetchImage(from url: String?) -> Data? {
         guard let stringURL = url else { return nil }
         guard let imageURL = URL(string: stringURL) else { return nil }
         return try? Data(contentsOf: imageURL)
+    }*/
+    
+    func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError) -> Void) {
+        guard let url = URL(string: url ?? "") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: url) else {
+                completion(.failure(.noData))
+                return
+            }
+            DispatchQueue.main.async {
+                completion(.success(imageData))
+            }
+        }
+        
     }
+    
+    
 }
 
 
+
+
+/*func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void) {
+    guard let url = URL(string: url ?? "") else {
+        completion(.failure(.invalidURL))
+        return
+    }
+    DispatchQueue.global().async {
+        guard let imageData = try? Data(contentsOf: url) else {
+            completion(.failure(.noData))
+            return
+        }
+        DispatchQueue.main.async {
+            completion(.success(imageData))
+        }
+    }
+}*/
