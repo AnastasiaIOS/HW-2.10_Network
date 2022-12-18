@@ -62,10 +62,11 @@ class MainViewController: UICollectionViewController {
         if segue.identifier != "showImage" {
             let ownerVC = segue.destination as! InfoAboutOwnerViewController
             switch segue.identifier {
-            case .showOwner:
+            case "showOwner":
       //          ownerVC.fetchOwner(from: Link.ownerURL.rawValue)
-            case .getInfoAboutOwnerAlamofire:
+            case "getInfoAboutOwnerAlamofire":
      //           ownerVC.fetchOwner2()
+            default: break
             }
             
             
