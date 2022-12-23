@@ -10,7 +10,9 @@ import UIKit
 
 class InfoAboutOwnerViewController: UITableViewController {
     
-    private var owners: [Owner] = []
+    var owners: [Owner] = []
+    
+    
     
     // MARK: - Table view data source
     
@@ -40,18 +42,13 @@ extension InfoAboutOwnerViewController {
         
         NetworkManager.shared.fetch(dataType: [Owner].self, from: Link.ownerURL.rawValue) { result in
             switch result {
-            case .success(let owners)
+            case .success(let owners):
                 self.owners = owners
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
         }
-        
-      /*  NetworkManager.shared.fetchOwner(from: url) { owner in
-            self.owners.append(owner)     // обновили текущую модель как свойство класса
-            self.tableView.reloadData()   // перезагружаем методы протокола UITABLEVIEWDATASOURCE
-        }*/
     }
 }
 

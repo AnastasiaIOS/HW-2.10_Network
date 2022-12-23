@@ -28,28 +28,7 @@ class NetworkManager {
     
     private init() {}
     
- /*   func fetchOwner(from url: String?, with completion: @escaping(Owner) -> Void) {
-        
-        guard let stringURL = url else { return }
-        guard let url = URL(string: stringURL) else {return}
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error")
-                return
-            }
-            do {
-                let owner = try JSONDecoder().decode(Owner.self, from: data) // декодируем полученные от                                                                    сервера данные в экз-р модели
-                DispatchQueue.main.async {   // выходим в основной поток
-                    completion(owner)        // в complition передаем экемпляр модели
-                }
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        } .resume()
-    }*/
+ 
     
     func fetch<T: Decodable>(dataType: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
@@ -99,6 +78,24 @@ class ImageManager {
             }
         }
     }
+    
+    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[Owner], NetworkError>) -> Void) {
+        AF.request(Link.ownerURL.rawValue)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let owners = Owner.getOwners(from: value)
+                  //  let courses = Course.getCourses(from: value)
+                    DispatchQueue.main.async {
+                        completion(.success(owners))
+                    }
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+            }
+    }
+    
     
     
 }
