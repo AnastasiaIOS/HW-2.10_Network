@@ -63,7 +63,7 @@ class MainViewController: UICollectionViewController {
             case "showOwner":
                ownerVC.fetchOwner(from: Link.ownerURL.rawValue)
             case "getInfoAboutOwnerAlamofire":
-                ownerVC.f
+                ownerVC.alamofireGetButtonPressed()
             default: break
             }
             
