@@ -54,6 +54,23 @@ class NetworkManager {
         }.resume()
     }
     
+    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[Owner], NetworkError>) -> Void) {
+        AF.request(Link.ownerURL.rawValue)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let owners = Owner.getOwners(from: value)
+                  //  let courses = Course.getCourses(from: value)
+                    DispatchQueue.main.async {
+                        completion(.success(owners))
+                    }
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+            }
+    }
+    
     
 }
 
@@ -79,22 +96,7 @@ class ImageManager {
         }
     }
     
-    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[Owner], NetworkError>) -> Void) {
-        AF.request(Link.ownerURL.rawValue)
-            .validate()
-            .responseJSON { dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    let owners = Owner.getOwners(from: value)
-                  //  let courses = Course.getCourses(from: value)
-                    DispatchQueue.main.async {
-                        completion(.success(owners))
-                    }
-                case .failure:
-                    completion(.failure(.decodingError))
-                }
-            }
-    }
+    
     
     
     

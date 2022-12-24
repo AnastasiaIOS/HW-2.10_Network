@@ -50,6 +50,32 @@ extension InfoAboutOwnerViewController {
             }
         }
     }
+    
+    func alamofireGetButtonPressed() {
+        
+        NetworkManager.shared.fetchDataWithAlamofire(Link.ownerURL.rawValue) { result in
+            switch result {
+            case .success(let owners):
+                self.owners = owners
+                self.tableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+          }
+        }
+        
+        
+        /*NetworkManager.shared.fetchDataWithAlamofire(Link.exampleTwo.rawValue) { result in
+            switch result {
+            case .success(let courses):
+                self.courses = courses
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }*/
+         
+    }
 }
 
 
