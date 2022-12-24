@@ -29,8 +29,8 @@ struct Owner: Decodable {
     }
     
     static func getOwners(from value: Any) -> [Owner] {
-        guard let ownersData = value as? [[String: Any]] else { return [] }
-        return ownersData.compactMap { Owner(ownerData: $0) }
+        guard let ownersData = value as? [String] else { return [] }
+        return ownersData.compactMap { Owner(ownerData: ) }
     }
     
 }

@@ -60,8 +60,7 @@ class NetworkManager {
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    let owners = Owner.getOwners(from: value)
-                    //  let courses = Course.getCourses(from: value)
+                    //let owners = Owner.getOwners(from: value)
                     DispatchQueue.main.async {
                         completion(.success(owners))
                     }
@@ -69,9 +68,7 @@ class NetworkManager {
                     completion(.failure(.decodingError))
                 }
             }
-    }
-    
-    
+        }
 }
 
 class ImageManager {
