@@ -38,7 +38,7 @@ class InfoAboutOwnerViewController: UITableViewController {
 
 extension InfoAboutOwnerViewController {
     
-    func fetchOwner(from url:String?) {
+    func fetchOwner() {
         
         NetworkManager.shared.fetch(dataType: [Owner].self, from: Link.ownerURL.rawValue) { result in
             switch result {
@@ -50,6 +50,8 @@ extension InfoAboutOwnerViewController {
             }
         }
     }
+    
+    //fetchOwner(from url:String?)
     
     func alamofireGetButtonPressed() {
         

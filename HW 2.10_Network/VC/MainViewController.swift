@@ -61,7 +61,7 @@ class MainViewController: UICollectionViewController {
             let ownerVC = segue.destination as! InfoAboutOwnerViewController
             switch segue.identifier {
             case "showOwner":
-               ownerVC.fetchOwner(from: Link.ownerURL.rawValue)
+               ownerVC.fetchOwner()
             case "getInfoAboutOwnerAlamofire":
                 ownerVC.alamofireGetButtonPressed()
             default: break

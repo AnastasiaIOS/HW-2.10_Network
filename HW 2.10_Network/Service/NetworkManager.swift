@@ -28,7 +28,7 @@ class NetworkManager {
     
     private init() {}
     
- 
+    
     
     func fetch<T: Decodable>(dataType: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
@@ -61,7 +61,7 @@ class NetworkManager {
                 switch dataResponse.result {
                 case .success(let value):
                     let owners = Owner.getOwners(from: value)
-                  //  let courses = Course.getCourses(from: value)
+                    //  let courses = Course.getCourses(from: value)
                     DispatchQueue.main.async {
                         completion(.success(owners))
                     }
@@ -95,11 +95,6 @@ class ImageManager {
             }
         }
     }
-    
-    
-    
-    
-    
 }
 
 
