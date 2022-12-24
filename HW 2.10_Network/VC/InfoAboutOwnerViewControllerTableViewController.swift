@@ -51,7 +51,6 @@ extension InfoAboutOwnerViewController {
         }
     }
     
-    //fetchOwner(from url:String?)
     
     func alamofireGetButtonPressed() {
         
@@ -65,18 +64,6 @@ extension InfoAboutOwnerViewController {
                 print(error)
           }
         }
-        
-        
-        /*NetworkManager.shared.fetchDataWithAlamofire(Link.exampleTwo.rawValue) { result in
-            switch result {
-            case .success(let courses):
-                self.courses = courses
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }*/
-         
     }
 }
 

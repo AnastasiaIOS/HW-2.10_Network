@@ -60,7 +60,7 @@ class NetworkManager {
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    //let owners = Owner.getOwners(from: value)
+                    let owners = Owner.getOwners(from: value)
                     DispatchQueue.main.async {
                         completion(.success(owners))
                     }
