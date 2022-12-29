@@ -62,7 +62,7 @@ class MainViewController: UICollectionViewController {
             switch segue.identifier {
             case "showOwner":
                ownerVC.fetchOwner()
-            case "getInfoAboutOwnerAlamofire":
+            case "showOwnerAlamofire":
                 ownerVC.alamofireGetButtonPressed()
             default: break
             }
