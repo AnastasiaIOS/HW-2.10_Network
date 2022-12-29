@@ -59,13 +59,14 @@ class MainViewController: UICollectionViewController {
         
         guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
         guard let imageVC = segue.destination as? ImageViewController else {return}
+        
             switch segue.identifier {
+            case "showImage":
+                imageVC.fetchImage()
             case "showOwner":
                ownerVC.fetchOwner()
             case "showOwnerAlamofire":
                 ownerVC.alamofireGetButtonPressed()
-            case "showImage":
-                imageVC.fetchImage()
             default: break
             }
             

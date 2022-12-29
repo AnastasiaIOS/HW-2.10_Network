@@ -30,10 +30,10 @@ struct Owner: Decodable {
     
     static func getOwners(from value: Any) -> [Owner] {
         guard let ownersData = value as? [String: Any] else { return [] }
-        let owner = [Owner(ownerData: ownersData)]
-        return owner
+        let owners = [Owner(ownerData: ownersData)]
+        return owners
         
-        // return ownersData.compactMap { Owner(ownerData: $0) }
+        
     }
     
 }
