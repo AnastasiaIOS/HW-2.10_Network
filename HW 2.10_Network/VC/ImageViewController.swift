@@ -21,7 +21,7 @@ class ImageViewController: UIViewController {
         
     }
     
-    private func fetchImage() {
+     func fetchImage() {
         ImageManager.shared.fetchImage(from: Link.imageURL.rawValue) { result in
             switch result {
             case .success(let data):

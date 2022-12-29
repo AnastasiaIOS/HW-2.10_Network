@@ -57,14 +57,18 @@ class MainViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-            let ownerVC = segue.destination as! InfoAboutOwnerViewController
+        guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
+        guard let imageVC = segue.destination as? ImageViewController else {return}
             switch segue.identifier {
             case "showOwner":
                ownerVC.fetchOwner()
             case "showOwnerAlamofire":
                 ownerVC.alamofireGetButtonPressed()
+            case "showImage":
+                imageVC.fetchImage()
             default: break
             }
+            
     }
 }
 
