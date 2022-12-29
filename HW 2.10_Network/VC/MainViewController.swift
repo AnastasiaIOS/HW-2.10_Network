@@ -11,7 +11,6 @@ import UIKit
 enum UserAction: String, CaseIterable { // подписываем под протокол для реализации массива
     case downloadImage = "Show Image"
     case getInfoAboutOwner = "Owner of Dog"
-   // case getImageAlamofire = "Image (Alamofire)"
     case getInfoAboutOwnerAlamofire = "Owner (Alamofire)"
 }
 
@@ -57,7 +56,7 @@ class MainViewController: UICollectionViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showImage" {
+        
             let ownerVC = segue.destination as! InfoAboutOwnerViewController
             switch segue.identifier {
             case "showOwner":
@@ -66,11 +65,9 @@ class MainViewController: UICollectionViewController {
                 ownerVC.alamofireGetButtonPressed()
             default: break
             }
-            
-            
-        }
     }
 }
+
 
 
 
