@@ -39,7 +39,8 @@ extension InfoAboutOwnerViewController {
     
     func fetchOwner() {
         
-        NetworkManager.shared.fetch(dataType: [Owner].self, from: Link.ownerURL.rawValue) { result in
+       
+       NetworkManager.shared.fetch(dataType: [Owner].self, from: Link.ownerURL.rawValue) { result in
             switch result {
             case .success(let owners):
                 self.owners = owners

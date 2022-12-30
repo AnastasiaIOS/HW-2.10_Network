@@ -50,10 +50,12 @@ class NetworkManager {
                 }
             } catch {
                 completion(.failure(.decodingError))
+    
             }
         }.resume()
     }
     
+   
     
     
     func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[Owner], NetworkError>) -> Void) {
