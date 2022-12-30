@@ -43,8 +43,8 @@ class NetworkManager {
                 return
             }
             do {
-                
-                let type = try JSONDecoder().decode(T.self, from: data)
+                let decoder = JSONDecoder()
+                let type = try decoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(type))
                 }
@@ -53,6 +53,8 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+    
     
     func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[Owner], NetworkError>) -> Void) {
         AF.request(Link.ownerURL.rawValue)
