@@ -33,6 +33,7 @@ class NetworkManager {
     func fetch<T: Decodable>(dataType: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
+            
             return
         }
         
@@ -50,6 +51,7 @@ class NetworkManager {
                 }
             } catch {
                 completion(.failure(.decodingError))
+                print(error.localizedDescription)
     
             }
         }.resume()
