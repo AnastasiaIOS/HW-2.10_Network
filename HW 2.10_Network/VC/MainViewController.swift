@@ -17,7 +17,7 @@ enum UserAction: String, CaseIterable { // подписываем под про�
 
 class MainViewController: UICollectionViewController {
     
-    let userActions = UserAction.allCases // massive
+ private let userActions = UserAction.allCases // massive
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,9 +57,6 @@ class MainViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-     //   guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
-       // guard let imageVC = segue.destination as? ImageViewController else {return}
-        
         if segue.identifier == "showImage" {
             guard let imageVC = segue.destination as? ImageViewController else {return}
             imageVC.fetchImage()
@@ -69,20 +66,7 @@ class MainViewController: UICollectionViewController {
         } else if segue.identifier == "showOwnerAlamofire" {
             guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
             ownerVC.alamofireGetButtonPressed()
-        } else {
-            return
         }
-        
-          /*  switch segue.identifier {
-            case "showImage":
-                imageVC.fetchImage()
-            case "showOwner":
-               ownerVC.fetchOwner()
-            case "showOwnerAlamofire":
-                ownerVC.alamofireGetButtonPressed()
-            default: break
-            }*/
-            
     }
 }
 

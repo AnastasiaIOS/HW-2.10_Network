@@ -13,7 +13,6 @@ class InfoAboutOwnerViewController: UITableViewController {
     var owners: [Owner] = []
     
     
-    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,9 +46,10 @@ extension InfoAboutOwnerViewController {
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
-            }
         }
     }
+}
+    
     
     
     func alamofireGetButtonPressed() {
