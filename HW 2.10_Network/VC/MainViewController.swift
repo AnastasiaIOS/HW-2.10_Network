@@ -57,10 +57,23 @@ class MainViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
-        guard let imageVC = segue.destination as? ImageViewController else {return}
+     //   guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
+       // guard let imageVC = segue.destination as? ImageViewController else {return}
         
-            switch segue.identifier {
+        if segue.identifier == "showImage" {
+            guard let imageVC = segue.destination as? ImageViewController else {return}
+            imageVC.fetchImage()
+        } else if segue.identifier == "showOwner" {
+            guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
+            ownerVC.fetchOwner()
+        } else if segue.identifier == "showOwnerAlamofire" {
+            guard let ownerVC = segue.destination as? InfoAboutOwnerViewController else {return}
+            ownerVC.alamofireGetButtonPressed()
+        } else {
+            return
+        }
+        
+          /*  switch segue.identifier {
             case "showImage":
                 imageVC.fetchImage()
             case "showOwner":
@@ -68,7 +81,7 @@ class MainViewController: UICollectionViewController {
             case "showOwnerAlamofire":
                 ownerVC.alamofireGetButtonPressed()
             default: break
-            }
+            }*/
             
     }
 }
