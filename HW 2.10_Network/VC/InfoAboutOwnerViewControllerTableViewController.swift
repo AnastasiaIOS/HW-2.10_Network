@@ -13,11 +13,15 @@ class InfoAboutOwnerViewController: UITableViewController {
     var owners: [Owner] = []
     
     
+   
+    
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         owners.count
+        
     }
     
     
@@ -32,6 +36,8 @@ class InfoAboutOwnerViewController: UITableViewController {
         cell.contentConfiguration = content
         
         return cell
+        
+        
     }
 }
 
@@ -39,17 +45,19 @@ extension InfoAboutOwnerViewController {
     
     func fetchOwner() {
         
-       
-       NetworkManager.shared.fetch(dataType: [Owner].self, from: Link.ownerURL.rawValue) { result in
-            switch result {
-            case .success(let owners):
-                self.owners = owners
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
+        
+          NetworkManager.shared.fetch(dataType: [Owner].self, from: Link.ownerURL.rawValue) { result in
+         switch result {
+         case .success(let owners):
+         self.owners = owners
+         self.tableView.reloadData()
+         case .failure(let error):
+         print(error)
+         }
+         }
+        
+        
         }
-    }
-}
     
     
     
@@ -63,7 +71,7 @@ extension InfoAboutOwnerViewController {
                 
             case .failure(let error):
                 print(error)
-          }
+            }
         }
     }
 }

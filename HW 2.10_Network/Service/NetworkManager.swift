@@ -30,7 +30,7 @@ class NetworkManager {
     
     
     
-    func fetch<T: Decodable>(dataType: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
+   func fetch<T: Decodable>(dataType: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
             
@@ -57,6 +57,32 @@ class NetworkManager {
         }.resume()
     }
     
+  /*  func fetchOwner(from url: String, completion: @escaping(Result<[Owner], NetworkError>) -> Void) {
+        guard let url = URL(string: url) else { // пытаемся создать экз-р класса юрл
+            completion(.failure(.invalidURL))  // если битый юрл то ошибка
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in // создаем сессию
+            guard let data = data else {  // извлекаем дату
+                completion(.failure(.noData))  // если не получится извлечь то помещаем туда ноудата
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            do {
+                
+                let type = try JSONDecoder().decode([Owner].self, from: data) // созд экз модели оунер
+                DispatchQueue.main.async {  // асинхронно выходим в основной поток
+                    completion(.success(type)) // вызыввем комплишн и в сексесс
+                }
+            } catch {  // ветка, если не получилось создать экз модели
+                completion(.failure(.decodingError))
+                print(error.localizedDescription)
+    
+            }
+        }.resume()
+    }*/
    
     
     

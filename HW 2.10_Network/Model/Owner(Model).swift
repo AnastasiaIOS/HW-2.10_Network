@@ -11,7 +11,9 @@ struct ImageDog: Decodable {
     let image: String
 }
 
+
 struct Owner: Decodable {
+    
     let name: String?
     let age: Int?
     let count: Int?
